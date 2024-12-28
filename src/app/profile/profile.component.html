@@ -1,0 +1,19 @@
+<div class="container" *ngIf="user">
+    <h2>Profile</h2>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <div class="profile-details">
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+  
+    <button (click)="logout()" class="btn btn-danger mt-3">Logout</button>
+  </div>
+  
+  <div *ngIf="!user" class="container">
+    <p>Loading profile...</p>
+  </div>
+  
